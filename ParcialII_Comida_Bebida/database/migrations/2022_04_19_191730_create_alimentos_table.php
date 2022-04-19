@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table ->string('nombre');
             $table ->string('tipo');
-            $table ->string('fecha_caducidad');
+            $table ->date('fecha_caducidad');
             $table->timestamps();
         });
     }

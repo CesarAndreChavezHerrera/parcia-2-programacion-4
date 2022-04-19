@@ -20,7 +20,7 @@ class AlimentosFactory extends Factory
             //
             'nombre'=>$this->faker->text(20),
             'tipo'=>$this->faker->text(10),
-            'fecha_caducidad'=>$this->faker->date,
+            'fecha_caducidad'=>$this->faker->date
         ];
     }
 }
