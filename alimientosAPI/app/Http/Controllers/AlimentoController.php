@@ -39,16 +39,21 @@ class AlimentoController extends Controller
     public function store(Request $request)
     {
         //
-        $alimento = $request->isMethod('put') ? Alimento::findOrFail($request->id) : new Alimento;
-        $alimento->id = $request->input('id');
-        $alimento->nombre = $request->input('nombre');
-        $alimento->descripcion = $request->input('descripcion');
-        $alimento->tipo = $request->input('tipo');
-        $alimento->fecha_vencimiento = $request->input('fecha_vencimiento');
+        //$alimento = $request->isMethod('put') ? Alimento::findOrFail($request->id) : new Alimento;
+        //$alimento->id = $request->input('id');
+        $alimento = new Alimento();
+        $alimento->nombre = $request->nombre;
+        $alimento->descripcion = $request->descripcion;
+        $alimento->tipo = $request->tipo;
+        $alimento->fecha_vencimiento = $request->fecha_vencimiento;
 
+        $alimento ->save();
+/*
         if($alimento->save()){
             return new AlimentoResource($alimento);
-        }
+       }
+
+       */
     }
 
     /**
@@ -84,9 +89,18 @@ class AlimentoController extends Controller
      * @param  \App\Models\Alimento  $alimento
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Alimento $alimento)
+    public function update(Request $request)
     {
         //
+        $alimento = Alimento::findOrFail($request->id);
+        
+        $alimento->nombre = $request->nombre;
+        $alimento->descripcion = $request->descripcion;
+        $alimento->tipo = $request->tipo;
+        $alimento->fecha_vencimiento = $request->fecha_vencimiento;
+
+        $alimento->save();
+        return $alimento;
     }
 
     /**
@@ -95,13 +109,9 @@ class AlimentoController extends Controller
      * @param  \App\Models\Alimento  $alimento
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Alimento $alimento)
+    public function destroy(Request $request)
     {
-        //obtener el metodo
-        $alimento = Alimento::findOrFail($id);
-
-        if($alimento->delete()){
-            return new AlimentoResource($alimento);
-        }
+        $alimento = Alimento::destroy($request -> id);
+        return $alimento;
     }
 }
