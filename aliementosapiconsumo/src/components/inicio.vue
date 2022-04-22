@@ -1,66 +1,39 @@
 <template>
-<head>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-</head>    
-
     <div>
+        <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        </head> 
         <H1>Lista de alimentos</H1>
         <!--button @click="get_alimentos()">actualizar</button-->
         <div>
-            <h2>tabla de datos</h2>
-            
-            <b-container>
-                <b-row>
-                    <b-col>
-                        ID
-                    </b-col>
-                    <b-col>
-                        Nombre
-                    </b-col>
-                    <b-col>
-                        Tipo
-                    </b-col>
-                    <b-col>
-                        Descripcion
-                    </b-col>
-                    <b-col>
-                        Fecha de vencimiento
-                    </b-col>
-                    <b-col>
-                        Editar
-                    </b-col>
-                    <b-col>
-                        Eliminar
-                    </b-col>
 
-                </b-row>
-                <div v-for="(item,_) in alimentos" v-bind:key="_">
-                    <b-row style="margin:0px">
-                        <b-col>
-                            {{item.id}}
-                        </b-col>
-                         <b-col>
-                            {{item.nombre}}
-                        </b-col>
-                        <b-col>
-                            {{item.tipo}}
-                        </b-col>
-                        <b-col>
-                            {{item.descripcion}}
-                        </b-col>
-                        <b-col>
-                            {{item.fecha_vencimiento}}
-                        </b-col>
-                        <b-col>
-                            <button @click="editar(item.id)" type="button" class="btn btn-success">Editar</button>
-                        </b-col>
-                        <b-col>
-                            <button @click="eliminar(item.id)" type="button" class="btn btn-danger"> Eliminar</button>
-                            
-                        </b-col>
-                    </b-row>
-                </div>   
-            </b-container>
+            <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">Fecha de Vencimiento</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="(item,_) in alimentos" v-bind:key="_">
+                    
+                    <th scope="col">{{item.id}}</th>
+                    <th scope="col">{{item.nombre}}</th>
+                    <th scope="col">{{item.tipo}}</th>
+                    <th scope="col">{{item.descripcion}}</th>
+                    <th scope="col">{{item.fecha_vencimiento}}</th>
+                    <th scope="col"><button @click="editar(item.id)" type="button" class="btn btn-success">Editar</button></th>
+                    <th scope="col"><button @click="eliminar(item.id)" type="button" class="btn btn-danger"> Eliminar</button></th>
+
+                </tr>
+            </tbody>
+            </table>
+         
         </div>
 
     </div>
