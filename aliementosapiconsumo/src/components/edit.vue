@@ -18,7 +18,7 @@
         <input type = "text" v-model="fecha_vencimiento"/>
 
         <br>
-        <button @click="actualizar">Guardar</button>
+        <button @click="actualizar" type="button" class="btn btn-success">Guardar</button>
 
     </div>
 </template>
