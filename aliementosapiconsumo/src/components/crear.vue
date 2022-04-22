@@ -1,7 +1,23 @@
 <template>
     <div class="crear">
         <H1>Crear un nuevo alimentos</H1>
-        <H2>{{modificar}}{{id_modificar}}</H2>
+        <div>
+            <h3>nombre</h3>
+            <input type = "text" v-model="nombre"/>
+
+            <h3>tipo</h3>
+            <input type = "text" v-model="tipo"/>
+
+            <h3>descripcion</h3>
+            <input type = "text" v-model="descripcion"/>
+
+            <h3>fecha de vencimiento</h3>
+            <input type = "text" v-model="fecha_vencimiento"/>
+
+            <br>
+            <button @click="save">guardar</button>
+
+        </div>
 
     </div>
     
@@ -12,36 +28,35 @@
 export default({
   data(){
         return{
-            contador:0,
-            alimentos:null,
-            modificar:false,
-            id_modificar:0,
+            
+            nombre:"",
+            descripcion:"",
+            tipo:"",
+            fecha_vencimiento:""
         }
     },
     
 
     methods:{
+        async save(){
+            var datos ={
+                "nombre":this.nombre,
+                "descripcion":this.descripcion,
+                "tipo":this.tipo,
+                "fecha_vencimiento":this.fecha_vencimiento
 
-        /*
-        async get_alimentos(){
-            var reponse = await fetch("http://127.0.0.1:8000/api/alimento");
-            var datos = await reponse.json();
-            //var alimentos = r.json()
-            this.alimentos = datos.data
-
-            console.log(this.alimentos)
-        },
-        async eliminar(id){
-            console.log(id)
-            
-            var reponse = await fetch("http://127.0.0.1:8000/api/alimento/"+id,{
-                "method":"DELETE"
+            }
+            var reponse = await fetch("http://127.0.0.1:8000/api/alimento/save",{
+                "method":"POST",
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(datos)
+                
             });
             console.log(reponse)
-            this.get_alimentos()
-            
         }
-        */
+
     }
 })
 </script>
