@@ -18,6 +18,7 @@
             <input type = "text" v-model="fecha_vencimiento"/>
 
             <br>
+            <br>
             <button @click="save" type="button" class="btn btn-success">Guardar</button>
 
         </div>
