@@ -20,6 +20,9 @@
                         descripcion
                     </b-col>
                     <b-col>
+                        fecha de vencimiento
+                    </b-col>
+                    <b-col>
                         editar
                     </b-col>
                     <b-col>
@@ -40,6 +43,9 @@
                         </b-col>
                         <b-col>
                             {{item.descripcion}}
+                        </b-col>
+                        <b-col>
+                            {{item.fecha_vencimiento}}
                         </b-col>
                         <b-col>
                             <button @click="editar(item.id)">editar</button>
