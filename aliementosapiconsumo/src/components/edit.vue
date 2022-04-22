@@ -2,20 +2,20 @@
     <div>
         <h1>Modificacion de los datos ID:{{id_}}</h1>
         
-        <h3>nombre</h3>
+        <h3>Nombre</h3>
         <input type = "text" v-model="nombre"/>
 
-        <h3>tipo</h3>
+        <h3>Tipo</h3>
         <input type = "text" v-model="tipo"/>
 
-        <h3>descripcion</h3>
+        <h3>Descripcion</h3>
         <input type = "text" v-model="descripcion"/>
 
-        <h3>fecha de vencimiento</h3>
+        <h3>Fecha de vencimiento</h3>
         <input type = "text" v-model="fecha_vencimiento"/>
 
         <br>
-        <button @click="actualizar">guardar</button>
+        <button @click="actualizar">Guardar</button>
 
     </div>
 </template>

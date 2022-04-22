@@ -11,22 +11,22 @@
                         ID
                     </b-col>
                     <b-col>
-                        nombre
+                        Nombre
                     </b-col>
                     <b-col>
-                        tipo
+                        Tipo
                     </b-col>
                     <b-col>
-                        descripcion
+                        Descripcion
                     </b-col>
                     <b-col>
-                        fecha de vencimiento
+                        Fecha de vencimiento
                     </b-col>
                     <b-col>
-                        editar
+                        Editar
                     </b-col>
                     <b-col>
-                        eliminar
+                        Eliminar
                     </b-col>
 
                 </b-row>
@@ -48,10 +48,11 @@
                             {{item.fecha_vencimiento}}
                         </b-col>
                         <b-col>
-                            <button @click="editar(item.id)">editar</button>
+                            <button @click="editar(item.id)" type="button" class="btn btn-success">Editar</button>
                         </b-col>
                         <b-col>
-                            <button @click="eliminar(item.id)"> eliminar</button>
+                            <button @click="eliminar(item.id)" type="button" class="btn btn-danger"> Eliminar</button>
+                            
                         </b-col>
                     </b-row>
                 </div>   
@@ -110,3 +111,4 @@ export default ({
     }
 })
 </script>
+
