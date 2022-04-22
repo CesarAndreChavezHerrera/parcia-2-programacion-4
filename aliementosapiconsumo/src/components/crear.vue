@@ -5,17 +5,46 @@
     <div class="crear">
         <H1>Crear un nuevo alimentos</H1>
         <div>
-            <h3>Nombre</h3>
-            <input type = "text" v-model="nombre"/>
+            <div class="nav justify-content-center">
+        <div>
+        <tr >
+            <td>
+                <h3>Nombre</h3>
+            </td>
+            <td>
+                <input type = "text" v-model="nombre"/>
+            </td>
+        </tr>
+        
+        <tr >
+            <td>
+                <h3>Tipo</h3>
+            </td>
+            <td>
+                <input type = "text" v-model="tipo"/>
+            </td>
+        </tr>
+        
 
-            <h3>Tipo</h3>
-            <input type = "text" v-model="tipo"/>
+        <tr >
+            <td>
+                <h3>Descripcion</h3>
+            </td>
+            <td>
+                <input type = "text" v-model="descripcion"/>
+            </td>
+        </tr>
 
-            <h3>Descripcion</h3>
-            <input type = "text" v-model="descripcion"/>
-
-            <h3>Fecha de vencimiento</h3>
-            <input type = "text" v-model="fecha_vencimiento"/>
+       <tr >
+            <td>
+                <h3>Fecha de vencimiento</h3>
+            </td>
+            <td>
+                <input type = "text" v-model="fecha_vencimiento"/>
+            </td>
+        </tr>
+        </div>
+        </div>
 
             <br>
             <br>
