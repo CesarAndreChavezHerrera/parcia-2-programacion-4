@@ -1,4 +1,7 @@
 <template>
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>  
     <div>
         <h1>Modificacion de los datos ID:{{id_}}</h1>
         
@@ -15,7 +18,7 @@
         <input type = "text" v-model="fecha_vencimiento"/>
 
         <br>
-        <button @click="actualizar">Guardar</button>
+        <button @click="actualizar" type="button" class="btn btn-success">Guardar</button>
 
     </div>
 </template>
