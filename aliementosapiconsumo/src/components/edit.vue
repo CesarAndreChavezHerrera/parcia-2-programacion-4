@@ -2,6 +2,7 @@
     <div>
         <h1>Modificacion de los datos ID:{{id_}}</h1>
         <div class="nav justify-content-center">
+        <div>
         <tr >
             <td>
                 <h3>Nombre</h3>
@@ -38,6 +39,7 @@
                 <input type = "text" v-model="fecha_vencimiento"/>
             </td>
         </tr>
+        </div>
         </div>
        
 
